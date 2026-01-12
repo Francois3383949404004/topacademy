@@ -1,74 +1,43 @@
-﻿@import "../../../styles/colors.scss";
+@import "../../../styles/colors.scss";
 @import "../../../styles/font-mixins.scss";
 
+.wrapper {
+  // Adds nice spacing above/below the whole section
+  padding: 4rem 1.5rem;
+  width: 100%;
+  
+  // Optional: Add a background color if you want it to stand out
+  // background-color: #f9fafb; 
+}
 
-.cols {
+.container {
+  // Keeps content centered but flexible (max width approx 1280px)
+  max-width: 80rem; 
+  margin: 0 auto;
+  
+  // Default: Mobile (Stacked vertical)
   display: grid;
-  grid-row-gap: 25px;
-  margin-bottom: 30px;
-  margin-left: 18px;
-  margin-right: 17px;
-}
+  grid-template-columns: 1fr;
+  gap: 3rem;
 
-
-
-@media only screen and (min-width: 500px) {
-  .cols {
-    margin-left: 40px;
-    margin-right: 40px;
+  // Desktop: Side-by-side (50% / 50%)
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem; // Bigger gap looks more premium
+    align-items: center; // Vertically centers text with images
   }
 }
 
+.col {
+  // Ensures anything inside (like images) fits the column perfectly
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; 
 
-
-@media only screen and (min-width: 800px) {
-  .cols {
-    margin-bottom: 50px;
-    grid-row-gap: 25px;
-  }
-}
-
-
-
-@media only screen and (min-width: 850px) {
-  .cols {
-    display: grid;
-    column-gap: 40px;
-    grid-row-gap: 60px;
-    width: 780px;
-    margin-bottom: 60px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media only screen and (min-width: 1250px) {
-  .cols {
-    display: grid;
-    grid-template:
-      "left right"
-      / 1fr 1fr;
-    column-gap: 100px;
-    grid-row-gap: 80px;
-    width: 1030px;
-    margin-bottom: 60px;
-  }
-}
-
-
-
-@media only screen and (min-width: 1400px) {
-  .cols {
-    display: grid;
-    column-gap: 80px;
-    width: 1180px;
-  }
-}
-
-@media only screen and (min-width: 1600px) {
-  .cols {
-    display: grid;
-    column-gap: 120px;
-    width: 1300px;
+  // If there are images inside, make them responsive automatically
+  :global(img) {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; // Softens the corners
   }
 }
