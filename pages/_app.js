@@ -49,7 +49,7 @@ const components = {
   product: Product,
   location: Location,
   artist: Artist,
-  song: Song
+  song: Song,
   pricing_grid: PricingGrid
 };
 
