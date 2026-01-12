@@ -1,8 +1,8 @@
 import { storyblokEditable } from "@storyblok/react";
-import css from "./PricingGrid.module.scss"; // Import the style file
+import css from "./PricingGrid.module.scss";
 
 const PricingGrid = ({ blok }) => {
-  // Safety check for data
+  // Safety check: Does 'cards' exist? If not, check other names, or use empty list.
   const cards = blok.cards || blok.body || blok.columns || [];
 
   return (
@@ -22,7 +22,7 @@ const PricingGrid = ({ blok }) => {
               key={card._uid}
               className={`${css.card} ${card.highlight ? css.highlight : ""}`}
             >
-              {/* "Popular" Badge */}
+              {/* "Popular" Badge - Only shows if highlight is checked */}
               {card.highlight && <div className={css.badge}>Most Popular</div>}
 
               <div className={css.content}>
@@ -30,16 +30,25 @@ const PricingGrid = ({ blok }) => {
                 
                 <div className={css.price}>
                   {card.price}
-                  <span>/mo</span>
+                  
                 </div>
                 
                 <p className={css.description}>{card.description}</p>
                 
-                {/* Features List */}
-                <div className={css.features}>
-                   {/* We render simple text here. If you use rich text later, you need a renderer */}
-                   {typeof card.features === 'string' ? card.features : "Includes all basic features"}
-                </div>
+                {/* Features List with Checkmarks */}
+                <ul className={css.featureList}>
+                  {/* We split the text by "Enter" (New Line) to make list items */}
+                  {typeof card.features === 'string' 
+                    ? card.features.split('\n').map((feature, index) => (
+                        feature.trim() && (
+                          <li key={index}>
+                            <span className={css.check}>✓</span> {feature}
+                          </li>
+                        )
+                      ))
+                    : <li className="text-sm text-red-500">Please switch 'features' to Textarea in Storyblok</li>
+                  }
+                </ul>
               </div>
 
               {/* Call to Action Button */}

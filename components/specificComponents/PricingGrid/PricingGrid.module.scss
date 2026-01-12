@@ -18,6 +18,10 @@
       color: #111827;
       margin-bottom: 1rem;
     }
+    p {
+        color: #6b7280;
+        font-size: 1.1rem;
+    }
   }
 
   .grid {
@@ -74,9 +78,10 @@
   .content {
     padding: 2rem;
     flex-grow: 1;
-    text-align: center;
+    // text-align: center; // Removed center align so list looks good
 
     h3 {
+      text-align: center;
       font-size: 1.25rem;
       font-weight: 700;
       color: #374151;
@@ -86,6 +91,7 @@
     }
 
     .price {
+      text-align: center;
       font-size: 3.5rem;
       font-weight: 800;
       color: #111827;
@@ -103,19 +109,37 @@
     }
 
     .description {
+      text-align: center;
       color: #6b7280;
       margin-bottom: 2rem;
       font-size: 1.1rem;
     }
 
-    .features {
+    // NEW LIST STYLES
+    .featureList {
       text-align: left;
-      margin-top: 2rem;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
       border-top: 1px solid #e5e7eb;
-      padding-top: 2rem;
-      color: #4b5563;
-      line-height: 1.8;
-      font-size: 0.95rem;
+      padding-left: 0;
+      list-style: none;
+
+      li {
+        display: flex;
+        align-items: flex-start; // Aligns checkmark with top of text
+        margin-bottom: 0.75rem;
+        color: #4b5563;
+        font-size: 0.95rem;
+        line-height: 1.4;
+
+        .check {
+          color: #10b981; /* Nice Green color */
+          font-weight: bold;
+          margin-right: 0.75rem;
+          font-size: 1.1rem;
+          line-height: 1; // Fixes checkmark alignment
+        }
+      }
     }
   }
 
