@@ -28,6 +28,7 @@ import Location from '../components/specificComponents/Location/Location';
 import Artist from '../components/specificComponents/Artist/Artist';
 import Song from '../components/specificComponents/Song/Song';
 import PricingGrid from '../components/specificComponents/PricingGrid/PricingGrid';
+import JoinForm from '../components/specificComponents/JoinForm/JoinForm';
 
 const components = {
   person: Teacher,
@@ -50,7 +51,8 @@ const components = {
   location: Location,
   artist: Artist,
   song: Song,
-  pricing_grid: PricingGrid
+  pricing_grid: PricingGrid,
+  join_form: JoinForm
 };
 
 storyblokInit({

@@ -1,0 +1,132 @@
+.wrapper {
+  padding: 5rem 1rem;
+  background-color: #f3f4f6;
+  min-height: 80vh; /* Takes up most of the screen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px; /* Nice narrow focus */
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+
+  h1 {
+    font-size: 2.5rem;
+    color: #111827;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    color: #6b7280;
+    font-size: 1.1rem;
+  }
+}
+
+.formCard {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.group {
+  margin-bottom: 1.5rem;
+  
+  label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.5rem;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+
+    &:focus {
+      outline: none;
+      border-color: #dc2626; /* Brand Red */
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+    }
+  }
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.submitBtn {
+  width: 100%;
+  background-color: #dc2626;
+  color: white;
+  font-weight: 700;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.2s;
+  margin-top: 1rem;
+
+  &:hover {
+    background-color: #b91c1c;
+  }
+}
+
+/* Success State Styles */
+.successMessage {
+  text-align: center;
+  padding: 2rem 0;
+
+  .checkIcon {
+    width: 60px;
+    height: 60px;
+    background: #d1fae5;
+    color: #059669;
+    font-size: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    color: #111827;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    color: #6b7280;
+    margin-bottom: 2rem;
+  }
+
+  .resetBtn {
+    background: transparent;
+    color: #6b7280;
+    border: 1px solid #d1d5db;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    &:hover { background: #f9fafb; color: black; }
+  }
+}
