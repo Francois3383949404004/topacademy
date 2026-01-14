@@ -92,8 +92,9 @@
     }
   }
 
+  /* --- UPDATED SECTION: CHANGED FONTS TO 'title-font' --- */
   &__large-text {
-    @include huge-text-font;
+    @include title-font; /* Changed from huge-text-font */
 
     &--with-navigator {
       @extend .highlighted-content__large-text;
@@ -103,7 +104,7 @@
 
     &--highlighted-green {
       @extend .highlighted-content__large-text;
-      @include huge-text-font($color-green-normal);
+      @include title-font($color-green-normal); /* Changed from huge-text-font */
 
       &--with-navigator {
         @extend .highlighted-content__large-text--highlighted-green;
@@ -114,7 +115,7 @@
 
     &--highlighted-blue {
       @extend .highlighted-content__large-text;
-      @include huge-text-font($color-blue-normal);
+      @include title-font($color-blue-normal); /* Changed from huge-text-font */
 
       &--with-navigator {
         @extend .highlighted-content__large-text--highlighted-blue;
@@ -125,7 +126,7 @@
 
     &--highlighted-red {
       @extend .highlighted-content__large-text;
-      @include huge-text-font($color-red-normal);
+      @include title-font($color-red-normal); /* Changed from huge-text-font */
 
       &--with-navigator {
         @extend .highlighted-content__large-text--highlighted-red;
@@ -136,7 +137,7 @@
 
     &--highlighted-purple {
       @extend .highlighted-content__large-text;
-      @include huge-text-font($color-purple-normal);
+      @include title-font($color-purple-normal); /* Changed from huge-text-font */
 
       &--with-navigator {
         @extend .highlighted-content__large-text--highlighted-purple;
@@ -147,7 +148,7 @@
 
     &--highlighted-yellow {
       @extend .highlighted-content__large-text;
-      @include huge-text-font($color-yellow-normal);
+      @include title-font($color-yellow-normal); /* Changed from huge-text-font */
 
       &--with-navigator {
         @extend .highlighted-content__large-text--highlighted-yellow;
