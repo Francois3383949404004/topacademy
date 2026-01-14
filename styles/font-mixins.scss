@@ -2,10 +2,8 @@
 
 /* =========================================
    PART 1: NEW MODERN ATHLETE STYLE
-   Use these mixins for all new work.
    ========================================= */
 
-/* Main Page Titles (Huge & Bold) */
 @mixin main-title-font($color: $color-default) {
   font-family: "Roboto", sans-serif !important;
   font-weight: 900 !important;
@@ -24,7 +22,6 @@
   }
 }
 
-/* Section Headlines */
 @mixin title-font($color: $color-default) {
   font-family: "Roboto", sans-serif;
   font-weight: 800;
@@ -38,7 +35,6 @@
   }
 }
 
-/* Standard Body Text */
 @mixin text-font($color: $color-default) {
   font-family: "Atlas Grotesk", sans-serif;
   font-weight: 400;
@@ -51,7 +47,6 @@
   }
 }
 
-/* Pricing & Big Numbers */
 @mixin price-text-font($color: $color-default) {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
@@ -60,7 +55,6 @@
   color: $color;
 }
 
-/* Card Titles */
 @mixin card-title-font($color: $color-default) {
   font-family: "Roboto", sans-serif;
   font-weight: 800;
@@ -71,11 +65,9 @@
 }
 
 /* =========================================
-   PART 2: LEGACY SUPPORT (FIXES VERCEL ERRORS)
-   These mixins are required by older components.
+   PART 2: LEGACY SUPPORT
    ========================================= */
 
-/* 1. Missing Titles */
 @mixin very-small-title-font($color: $color-default) {
   @include card-title-font($color);
   font-size: 18px;
@@ -86,7 +78,6 @@
   font-size: 20px;
 }
 
-/* 2. Missing Header/Menu Fonts */
 @mixin header-font($color: $color-default) {
   @include text-font($color);
   font-weight: 700;
@@ -101,7 +92,6 @@
   letter-spacing: 1px;
 }
 
-/* 3. Missing Text Variations */
 @mixin type-name-font($color: $color-default) {
   @include text-font($color);
   font-weight: 500;
@@ -163,4 +153,7 @@
   font-size: 18px;
 }
 
-@mixin card-info-font-small
+@mixin card-info-font-small($color: $color-default) {
+  @include text-font($color);
+  font-size: 14px;
+}
