@@ -72,15 +72,21 @@
 
 /* =========================================
    PART 2: LEGACY SUPPORT (FIXES VERCEL ERRORS)
-   These mixins satisfy the old components (Hero, Intro, etc.)
-   by mapping them to the new styles above.
+   These mixins are required by older components.
    ========================================= */
 
+/* 1. Missing Titles */
 @mixin very-small-title-font($color: $color-default) {
   @include card-title-font($color);
   font-size: 18px;
 }
 
+@mixin small-title-font($color: $color-default) {
+  @include card-title-font($color);
+  font-size: 20px;
+}
+
+/* 2. Missing Header/Menu Fonts */
 @mixin header-font($color: $color-default) {
   @include text-font($color);
   font-weight: 700;
@@ -88,6 +94,14 @@
   letter-spacing: 1px;
 }
 
+@mixin header-expanded-font($color: $color-default) {
+  @include text-font($color);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 3. Missing Text Variations */
 @mixin type-name-font($color: $color-default) {
   @include text-font($color);
   font-weight: 500;
@@ -103,6 +117,24 @@
 @mixin slightly-larger-text-font($color: $color-default) {
   @include text-font($color);
   font-size: 1.1rem;
+}
+
+@mixin larger-text-font($color: $color-default) {
+  @include title-font($color);
+  font-size: 24px; 
+}
+
+@mixin huge-text-font($color: $color-default) {
+  @include main-title-font($color);
+}
+
+@mixin big-text-font($color: $color-default) {
+  @include title-font($color);
+}
+
+@mixin large-text-font($color: $color-default) {
+  @include title-font($color);
+  font-size: 24px;
 }
 
 @mixin pretitle-font($color: $color-default) {
@@ -121,15 +153,14 @@
   font-size: 14px;
 }
 
-@mixin huge-text-font($color: $color-default) {
-  @include main-title-font($color);
+@mixin posttitle-font-small($color: $color-default) {
+  @include text-font($color);
+  font-size: 14px;
 }
 
-@mixin big-text-font($color: $color-default) {
-  @include title-font($color);
+@mixin card-title-font-small($color: $color-default) {
+  @include card-title-font($color);
+  font-size: 18px;
 }
 
-@mixin large-text-font($color: $color-default) {
-  @include title-font($color);
-  font-size: 24px;
-}
+@mixin card-info-font-small
